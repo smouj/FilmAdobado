@@ -1,4 +1,5 @@
 # FilmAdobado
+![FilmAdobado](docs/screenshot.png)
 
 <p align="center"><img src="assets/adobado/icon.png" width="104" alt="FilmAdobado"></p>
 
@@ -9,7 +10,7 @@
 [![Status](https://img.shields.io/badge/status-early%20alpha-d69e2e)](#estado)
 [![Adobado Kit](https://img.shields.io/badge/Adobado%20Kit-hub-b8f34a)](https://github.com/smouj/Adobado_Kit)
 
-> **Alpha temprana.** Codigo importado y rebrandeado desde FilmCraft. Build de Windows y prueba de edicion pendientes. No se presenta como app disponible ni como sustituto profesional.
+> **Alpha temprana.** Codigo importado y rebrandeado desde FilmCraft. Build de Windows correcto y app abierta/probada el 20/10/2026. Falta prueba de edicion real y release.
 >
 > Proyecto independiente. No afiliado a ArtCraft ni a Adobe.
 
@@ -17,7 +18,8 @@
 
 - Codigo fuente: importado desde filmcraft en el commit fb4cbda47a134eedabd89fe02cd59ebc69462737.
 - Rebranding visible: nombre, enlaces, README, avisos y documentacion.
-- Pendiente: compilar en Windows, probar abrir/editar/exportar y publicar release.
+- Build de Windows: OK. App abierta y probada.
+- Pendiente: probar edicion real y publicar release.
 
 ## Build
 
