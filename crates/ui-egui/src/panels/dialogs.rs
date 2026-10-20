@@ -444,7 +444,7 @@ fn about(app: &mut FilmcraftApp, ui: &mut egui::Ui) {
     }
 }
 
-/// About ▸ About: version, licence and the Adobado Kit community links. Joining the Discord is the
+/// About ▸ About: version, licence and the Adobado Kit project links. Getting help is the
 /// first, accented button.
 ///
 /// Automation ids: `about.discord`, `about.website`, `about.appPage`, `about.github`,
@@ -489,10 +489,10 @@ fn about_tab(app: &mut FilmcraftApp, ui: &mut egui::Ui) {
             links::open(app, ui.ctx(), url);
         }
     };
-    link(ui, "discord", Icon::Chat, tl!("Join the Adobado Kit Discord"), links::DISCORD, true);
+    link(ui, "support", Icon::Chat, "Get help and report an issue", links::SUPPORT, true);
     ui.add_space(6.0);
-    link(ui, "website", Icon::Globe, "getartcraft.com", links::WEBSITE, false);
-    link(ui, "appPage", Icon::Globe, tl!("FilmAdobado on getartcraft.com"), links::APP_PAGE, false);
+    link(ui, "website", Icon::Globe, "Adobado Kit website", links::WEBSITE, false);
+    link(ui, "appPage", Icon::Globe, "FilmAdobado project page", links::APP_PAGE, false);
     link(ui, "github", Icon::Code, tl!("Source code on GitHub"), links::GITHUB, false);
     link(ui, "reportIssue", Icon::Code, tl!("Report an issue"), links::ISSUES, false);
     ui.add_space(10.0);

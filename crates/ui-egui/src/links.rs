@@ -1,16 +1,18 @@
-//! Community and project links (Help menu, About dialog, header Discord button, Home screen).
+//! Support and project links (Help menu, About dialog, header action and Home screen).
 //!
-//! FilmAdobado is part of the Adobado Kit family: the community lives on the Adobado Kit Discord, every
-//! app has a page on the Adobado Kit website and a public GitHub repository.
+//! FilmAdobado is part of Adobado Kit. The website, repository and issue tracker are the supported
+//! places to find current project information and get help.
 
-/// The app's short name, used in the website and repository URLs.
-pub const APP: &str = "filmcraft";
+/// The app's public repository name.
+pub const APP: &str = "FilmAdobado";
 
-/// The Adobado Kit community Discord.
-pub const DISCORD: &str = "https://github.com/smouj/Adobado_Kit";
+/// Where users can get help or report a problem.
+pub const SUPPORT: &str = "https://github.com/smouj/FilmAdobado/issues";
+/// Compatibility alias for integrations that used the former community-link name.
+pub const DISCORD: &str = SUPPORT;
 /// The Adobado Kit website.
-pub const WEBSITE: &str = "https://github.com/smouj/Adobado_Kit";
-/// FilmAdobado's page on the Adobado Kit website.
+pub const WEBSITE: &str = "https://smouj.github.io/Adobado_Kit/";
+/// FilmAdobado's project page.
 pub const APP_PAGE: &str = "https://github.com/smouj/FilmAdobado";
 /// FilmAdobado's source repository.
 pub const GITHUB: &str = "https://github.com/smouj/FilmAdobado";
@@ -19,9 +21,9 @@ pub const ISSUES: &str = "https://github.com/smouj/FilmAdobado/issues";
 
 /// (command id, label, url) for every link, in menu order.
 pub const ALL: [(&str, &str, &str); 5] = [
-    ("help.discord", "Join the Adobado Kit Discord…", DISCORD),
+    ("help.discord", "Get help and report an issue…", SUPPORT),
     ("help.website", "Adobado Kit Website", WEBSITE),
-    ("help.appPage", "FilmAdobado on getartcraft.com", APP_PAGE),
+    ("help.appPage", "FilmAdobado project page", APP_PAGE),
     ("help.github", "FilmAdobado on GitHub", GITHUB),
     ("help.reportIssue", "Report an Issue…", ISSUES),
 ];
@@ -126,16 +128,16 @@ mod tests {
 
     #[test]
     fn urls_follow_the_artcraft_scheme() {
-        assert_eq!(APP_PAGE, format!("{WEBSITE}/apps/{APP}"));
+        assert_eq!(APP_PAGE, GITHUB);
         assert_eq!(GITHUB, format!("https://github.com/storytold/{APP}"));
         assert!(ALL.iter().all(|(id, _, u)| id.starts_with("help.") && u.starts_with("https://")));
-        assert_eq!(url_for("help.discord"), Some(DISCORD));
+        assert_eq!(url_for("help.discord"), Some(SUPPORT));
         assert_eq!(url_for("help.nope"), None);
     }
 
     #[test]
     fn links_open_through_the_host_hook() {
-        // #642: on the desktop every link (Help menu, About, Discord button, Import screen) must
+        // #642: on the desktop every link (Help menu, About, support button, Import screen) must
         // reach the host's browser opener; `ctx.open_url` alone is a no-op natively.
         use std::cell::RefCell;
         use std::rc::Rc;
@@ -152,8 +154,8 @@ mod tests {
             assert_eq!(r["url"], url, "{id}");
             assert_eq!(opened.borrow().last().map(String::as_str), Some(url), "{id}");
         }
-        open(&mut app, &ctx, DISCORD);
-        assert_eq!(opened.borrow().last().map(String::as_str), Some(DISCORD));
+        open(&mut app, &ctx, SUPPORT);
+        assert_eq!(opened.borrow().last().map(String::as_str), Some(SUPPORT));
         assert_eq!(opened.borrow().len(), ALL.len() + 1);
 
         // A failing opener falls back to `ctx.open_url` instead of losing the click.

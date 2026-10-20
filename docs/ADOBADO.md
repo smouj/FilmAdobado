@@ -28,4 +28,4 @@ ArtCraft, FilmCraft y sus logos son marcas del ArtCraft Team y no estan cubierto
 
 ## Aviso
 
-Esta es una distribucion modificada. Las modificaciones son de SMOUJ013 (2026). El codigo original conserva sus avisos de copyright y licencia.
+Esta es una distribucion modificada. Las modificaciones son de @smouj (2026). El codigo original conserva sus avisos de copyright y licencia.
