@@ -83,8 +83,7 @@ pub enum Icon {
     Undo,
     Redo,
     Bell,
-    /// Community chat (the Adobado Kit Discord): a speech bubble with three dots. Our own drawing,
-    /// not the Discord logo.
+    /// Support and issue reporting: a speech bubble with three dots, drawn for this app.
     Chat,
     /// Website: a globe.
     Globe,

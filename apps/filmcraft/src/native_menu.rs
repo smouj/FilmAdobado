@@ -39,11 +39,11 @@ pub fn install(app: &FilmcraftApp, ctx: egui::Context) -> (Receiver<String>, Men
         native.push((it.clone(), mi.clone()));
         let _ = settings.append(&mi);
     }
-    // About and Discord repeat Help menu commands: same translated labels, updated with them
+    // About and support repeat Help menu commands: same translated labels, updated with them
     let label = |id: &str, english: &str| items.iter().find(|i| i.id == id).map_or_else(|| english.to_string(), |i| i.label.clone());
     let about = MenuItem::with_id("app.about", label("app.about", "About FilmAdobado"), true, None);
-    let discord = MenuItem::with_id("help.discord", label("help.discord", "Join the Adobado Kit Discord…"), true, None);
-    for (id, mi) in [("app.about", &about), ("help.discord", &discord)] {
+    let support = MenuItem::with_id("help.discord", label("help.discord", "Get help and report an issue…"), true, None);
+    for (id, mi) in [("app.about", &about), ("help.discord", &support)] {
         if let Some(it) = items.iter().find(|i| i.id == id) {
             // recorded as built (enabled, no shortcut), so the first update applies the real state
             native.push((Item { enabled: true, shortcut: None, ..it.clone() }, mi.clone()));
@@ -58,7 +58,7 @@ pub fn install(app: &FilmcraftApp, ctx: egui::Context) -> (Receiver<String>, Men
     let [(_, hide), (_, hide_others), (_, quit)] = &predefined;
     let _ = app_menu.append_items(&[
         &about,
-        &discord,
+        &support,
         &PredefinedMenuItem::separator(),
         &settings,
         &PredefinedMenuItem::separator(),

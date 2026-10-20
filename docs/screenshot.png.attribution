@@ -1,0 +1,8 @@
+asset:        docs/screenshot.png
+title:        FilmAdobado application screenshot
+author:       @smouj
+source:       original work captured from FilmAdobado
+license:      MIT OR Apache-2.0
+license-file: LICENSE-MIT and LICENSE-APACHE
+added:        2026-10-20 by @smouj
+notes:        Real screenshot of FilmAdobado's editing workspace with repository-generated demo footage; no third-party application UI shown
