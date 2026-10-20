@@ -1,5 +1,4 @@
 # FilmAdobado
-![FilmAdobado](docs/screenshot.png)
 
 <p align="center"><img src="assets/adobado/icon.png" width="104" alt="FilmAdobado"></p>
 
@@ -13,6 +12,8 @@
 > **Alpha temprana.** Codigo importado y rebrandeado desde FilmCraft. Build de Windows correcto y app abierta/probada el 20/10/2026. Falta prueba de edicion real y release.
 >
 > Proyecto independiente. No afiliado a ArtCraft ni a Adobe.
+
+![FilmAdobado](docs/screenshot.png)
 
 ## Estado
 
